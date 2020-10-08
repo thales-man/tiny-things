@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Tiny.API</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HttpService\Contracts\Http.Service.Contracts.Referenced.csproj" />
+    <ProjectReference Include="..\..\HttpService\Models\Http.Service.Models.Referenced.csproj" />
+    <ProjectReference Include="..\..\HttpService\Providers\Http.Service.Providers.Referenced.csproj" />
+    <ProjectReference Include="..\Contracts\Tiny.API.Contracts.Referenced.csproj" />
+    <ProjectReference Include="..\..\..\Framework4\Base\Tiny.Framework.csproj" />
+    <ProjectReference Include="..\..\..\Framework4\Server\Tiny.Framework.Server.csproj" />
+  </ItemGroup>
+</Project>

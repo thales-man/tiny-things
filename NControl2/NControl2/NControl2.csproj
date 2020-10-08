@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceAssemblyReference>true</ProduceAssemblyReference>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="NGraphics" Version="0.5.0" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />
+    <PackageReference Include="Xamarin.Forms.Maps" Version="4.5.0.617" />
+    <PackageReference Include="System.Composition" Version="1.4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Icons.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Resources\Icons.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Markup\DataPathWalker.cs" />
+    <Compile Remove="Markup\GeometryBrush.cs" />
+    <Compile Remove="Markup\GeometryCommand.cs" />
+    <Compile Remove="Markup\GeometryDrawing.cs" />
+    <Compile Remove="Markup\GeometryPathOperations.cs" />
+    <Compile Remove="Markup\IAggregateGeometryPathOperations.cs" />
+    <Compile Remove="Markup\IResolveGeometryPathOperations.cs" />
+    <Compile Remove="Markup\ParseGeometry.cs" />
+    <Compile Remove="Markup\VectorImage.cs" />
+    <Compile Remove="Controls\Border.cs" />
+    <Compile Remove="Controls\BusyBox.cs" />
+    <Compile Remove="Controls\RoundButton.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework4\Base\Tiny.Framework.csproj" />
+    <ProjectReference Include="..\..\Framework4\Presentation\Tiny.Framework.Xamarin.csproj" />
+    <ProjectReference Include="..\..\Framework4\Application\Tiny.Framework.Application.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns = "http://xamarin.com/schemas/2014/forms"
+    xmlns:x = "http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class = "Hanselman.Views.AboutPage"
+    Icon = "{Binding Path=Icon}"
+    Title = "{Binding Path=Title}">
+    <ScrollView>
+        <StackLayout
+            Orientation = "Vertical"
+            Spacing = "10"
+            Padding = "10">
+            <Image
+                Aspect = "AspectFill"
+                Source = "scott.png"
+                Margin = "-10,-10,-10,0" />
+            <Label
+                Margin = "0,25"
+                Text = "{Binding Description}"
+                LineBreakMode = "WordWrap" />
+            <StackLayout
+                Orientation = "Horizontal"
+                HorizontalOptions = "CenterAndExpand"
+                Spacing = "10">
+                <Image
+                    x:Name = "twitter"
+                    Source = "twitter.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command = "{Binding Path=TwitterCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image
+                    x:Name = "facebook"
+                    Source = "facebook.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command = "{Binding Path=FacebookCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image
+                    x:Name = "instagram"
+                    Source = "instagram.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Command = "{Binding Path=InstagramCommand}" />
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

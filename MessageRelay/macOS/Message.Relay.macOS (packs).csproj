@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{F9C8B40F-5D6E-4212-A9C9-56DC07E40C89}</ProjectGuid>
+        <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>MessageRelay.macOS</RootNamespace>
+        <AssemblyName>Message.Relay.Shell</AssemblyName>
+        <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+        <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+        <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug</OutputPath>
+        <DefineConstants>DEBUG;</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <EnableCodeSigning>false</EnableCodeSigning>
+        <CodeSigningKey>Mac Developer</CodeSigningKey>
+        <CreatePackage>false</CreatePackage>
+        <EnablePackageSigning>false</EnablePackageSigning>
+        <IncludeMonoRuntime>false</IncludeMonoRuntime>
+        <UseSGen>true</UseSGen>
+        <UseRefCounting>true</UseRefCounting>
+        <Profiling>true</Profiling>
+        <HttpClientHandler>
+        </HttpClientHandler>
+        <LinkMode>
+        </LinkMode>
+        <XamMacArch>
+        </XamMacArch>
+        <AOTMode>None</AOTMode>
+        <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+        <NoStdLib>true</NoStdLib>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release</OutputPath>
+        <DefineConstants>
+        </DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+        <EnableCodeSigning>false</EnableCodeSigning>
+        <CreatePackage>true</CreatePackage>
+        <EnablePackageSigning>false</EnablePackageSigning>
+        <IncludeMonoRuntime>true</IncludeMonoRuntime>
+        <UseSGen>true</UseSGen>
+        <UseRefCounting>true</UseRefCounting>
+        <LinkMode>SdkOnly</LinkMode>
+        <HttpClientHandler>
+        </HttpClientHandler>
+        <XamMacArch>
+        </XamMacArch>
+        <AOTMode>None</AOTMode>
+        <NoStdLib>true</NoStdLib>
+    </PropertyGroup>
+    <ItemGroup>
+    </ItemGroup>
+    <ItemGroup>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-128.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-128%402x.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-16.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-16%402x.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-256.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-256%402x.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-32.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-32%402x.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-512.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-512%402x.png" />
+        <ImageAsset Include="Assets.xcassets\Contents.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Resources\" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Info.plist" />
+        <None Include="Entitlements.plist" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Main.cs" />
+        <Compile Include="AppDelegate.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <BundleResource Include="Resources\participating_assemblies.xml" />
+        <BundleResource Include="Resources\service_configuration.xml" />
+        <BundleResource Include="Resources\script_store.xml" />
+        <BundleResource Include="Resources\token_store.xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <InterfaceDefinition Include="Main.storyboard" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
+        <PackageReference Include="Tiny.API" Version="2.0.0" />
+        <PackageReference Include="Plugin.MediaManager" Version="0.9.7" />
+        <PackageReference Include="System.Composition">
+          <Version>1.4.0</Version>
+        </PackageReference>
+        <PackageReference Include="NGraphics">
+          <Version>0.5.0</Version>
+        </PackageReference>
+        <PackageReference Include="Newtonsoft.Json">
+          <Version>12.0.3</Version>
+        </PackageReference>
+        <PackageReference Include="Plugin.MediaManager.Forms">
+          <Version>0.9.7</Version>
+        </PackageReference>
+        <PackageReference Include="Tiny.Framework.Xamarin">
+          <Version>2.0.0</Version>
+        </PackageReference>
+        <PackageReference Include="Tiny.Framework.Server">
+          <Version>2.0.0</Version>
+        </PackageReference>
+        <PackageReference Include="Tiny.Framework.Application">
+          <Version>2.0.0</Version>
+        </PackageReference>
+        <PackageReference Include="System.Composition.Convention">
+          <Version>1.4.0</Version>
+        </PackageReference>
+        <PackageReference Include="System.Composition.Hosting">
+          <Version>1.4.0</Version>
+        </PackageReference>
+        <PackageReference Include="System.Composition.AttributedModel">
+          <Version>1.4.0</Version>
+        </PackageReference>
+        <PackageReference Include="System.Composition.Runtime">
+          <Version>1.4.0</Version>
+        </PackageReference>
+        <PackageReference Include="System.Composition.TypedParts">
+          <Version>1.4.0</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="Xamarin.Mac" />
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\MessageRelay\MessageRelay %28packs%29.csproj">
+        <Project>{1DD5042E-24F3-4E75-ACC5-A35F5131761B}</Project>
+        <Name>MessageRelay (packs)</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+</Project>

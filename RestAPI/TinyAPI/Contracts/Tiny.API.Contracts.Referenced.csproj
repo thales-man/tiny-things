@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Tiny.API.Contracts</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
+  <ItemGroup>
+    <ProjectReference Include="..\..\HttpService\Contracts\Http.Service.Contracts.Referenced.csproj" />
+  </ItemGroup>
+</Project>

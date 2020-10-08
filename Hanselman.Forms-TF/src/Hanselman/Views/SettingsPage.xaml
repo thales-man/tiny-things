@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:y="clr-namespace:Tiny.Framework.Controls;assembly=Tiny.Framework.Xamarin"
+    x:Class="Hanselman.Views.SettingsPage"
+    Icon="{Binding Path=Icon}"
+    Title="{Binding Path=Title}">
+    <!--    <y:Border
+        BorderColor = "Fuchsia"
+        BorderThickness= "3"
+        CornerRadius = "15"
+        HeightRequest = "100"
+        WidthRequest = "200"
+        HorizontalOptions = "Center"
+        VerticalOptions = "Center"
+        Source = "scott159.png" />
+-->
+    <StackLayout>
+        <Label
+            Text="Welcome to Xamarin.Forms!"
+            HorizontalOptions="Center"
+            VerticalOptions="CenterAndExpand" />
+        <y:RoundButton
+            BorderColor="Gray"
+            BorderWidth="6"
+            DiameterRequest="150">
+            <Image
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                Source="scott159.png" />
+        </y:RoundButton>
+        <y:RoundButton>
+            <y:VectorImage
+                BackgroundColor="Lime"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand"
+                WidthRequest="150"
+                HeightRequest="150"
+                GeometryBrush="{StaticResource circle_arrow_right}" />
+        </y:RoundButton>
+        <y:VectorImage
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+            WidthRequest="240"
+            HeightRequest="240"
+            GeometryBrush="{DynamicResource circle_tick}">
+<!--            <Image
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                Source="scott159.png" />
+-->        </y:VectorImage>
+        <y:VectorImage
+            BackgroundColor="Red"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="CenterAndExpand"
+            WidthRequest="240"
+            HeightRequest="240"
+            GeometryBrush="{DynamicResource star_5_point}">
+            <Image
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand"
+                Source="scott159.png" />
+        </y:VectorImage>
+    </StackLayout>
+</ContentPage>

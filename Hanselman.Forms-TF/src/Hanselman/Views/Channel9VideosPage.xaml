@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:y="clr-namespace:Tiny.Framework.Controls;assembly=Tiny.Framework.Xamarin"
+    x:Class="Hanselman.Views.Channel9VideosPage"
+    Title="{Binding Path=Title}"
+    Icon="{Binding Path=Icon}"
+    IsBusy="{Binding Path=IsBusy}">
+    <ListView
+        x:Name="listView"
+        CachingStrategy="RecycleElement"
+        ItemsSource="{Binding Path=FeedItems}"
+        SelectedItem="{Binding Path=SelectedFeedItem}"
+        HasUnevenRows="True"
+        IsPullToRefreshEnabled="True"
+        SeparatorVisibility="None"
+        RefreshCommand="{Binding Path=LoadItemsCommand}"
+        IsRefreshing="{Binding Path=IsBusy, Mode=OneWay}"
+        AbsoluteLayout.LayoutFlags="All"
+        AbsoluteLayout.LayoutBounds="0,0,1,1">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <y:Border
+                        Margin="5,5,0,5"
+                        IsClippedToBounds="true"
+                        CornerRadius="15,15,0,0"
+                        BorderThickness="5,5,0,5"
+                        BorderColor="Olive"
+                        BackgroundColor="Gray"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand">
+                        <Grid
+                            Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition
+                                    Width="70" />
+                                <ColumnDefinition
+                                    Width="5" />
+                                <ColumnDefinition
+                                    Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image
+                                HorizontalOptions="FillAndExpand"
+                                VerticalOptions="FillAndExpand"
+                                Aspect="AspectFill"
+                                Margin="-10"
+                                Source="{Binding Path=ImagePath}" />
+                            <StackLayout
+                                Grid.Column="2"
+                                Spacing="4"
+                                VerticalOptions="StartAndExpand">
+                                <Label
+                                    Text="{Binding Path=Title}"
+                                    TextColor="#3498DB"
+                                    FontSize="Medium"
+                                    LineBreakMode="WordWrap" />
+                                <Label
+                                    Text="{Binding Path=PublishDate}"
+                                    TextColor="#3498DB"
+                                    FontSize="Small"
+                                    LineBreakMode="NoWrap" />
+                                <Label
+                                    Text="{Binding Path=Text}"
+                                    FontSize="Small"
+                                    LineBreakMode="WordWrap" />
+                            </StackLayout>
+                        </Grid>
+                    </y:Border>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

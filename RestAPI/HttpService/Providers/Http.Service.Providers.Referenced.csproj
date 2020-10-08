@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Http.Service.Providers</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contracts\Http.Service.Contracts.Referenced.csproj" />
+    <ProjectReference Include="..\Models\Http.Service.Models.Referenced.csproj" />
+  </ItemGroup>
+</Project>

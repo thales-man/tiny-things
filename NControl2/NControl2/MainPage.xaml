@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Tiny.Framework.Controls;assembly=Tiny.Framework.Xamarin"
+    x:Class="NControl2.MainPage">
+    <RelativeLayout
+        x:Name="layout"
+        VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand">
+        <local:Border
+            x:Name="mapContainer" />
+        <local:Border
+            x:Name="topCurtain"
+            BorderColor="Orange"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+            BorderThickness="0,0,0,5"
+            BackgroundColor="Green" />
+        <local:Border
+            x:Name="bottomCurtain"
+            BorderColor="DarkCyan"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand"
+            BorderThickness="0,5,0,0"
+            BackgroundColor="Orange" />
+        <local:Border
+            x:Name="navigationBar"
+            BorderColor="DarkGray"
+            VerticalOptions="Start"
+            HorizontalOptions="FillAndExpand"
+            HeightRequest="100"
+            BorderThickness="0,0,0,3"
+            BackgroundColor="Aqua">
+            <Label
+                Margin="7"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand"
+                Text="I'm defined in XAML!" />
+        </local:Border>
+        <local:BusyBox
+            x:Name="progress"
+            CogBrush="{DynamicResource hollow_cog}" />
+        <local:Border
+            x:Name="bottomBar"
+            BorderColor="DarkGray"
+            VerticalOptions="End"
+            HorizontalOptions="FillAndExpand"
+            HeightRequest="100"
+            BorderThickness="0,3,0,0"
+            BackgroundColor="GreenYellow">
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="CenterAndExpand"
+                Padding="11">
+                <local:RoundButton
+                    x:Name="firstButton"
+                    FillColor="LightGray">
+                    <local:VectorImage
+                        Fill="Lime"
+                        GeometryBrush="{DynamicResource circle_arrow_left}" />
+                </local:RoundButton>
+                <local:RoundButton
+                    x:Name="secondButton"
+                    FillColor="Blue">
+                    <local:VectorImage
+                        Fill="Cyan"
+                        Stroke="HotPink"
+                        StrokeWidth="1"
+                        GeometryBrush="{DynamicResource circle_arrow_right}" />
+                </local:RoundButton>
+                <local:RoundButton
+                    x:Name="thirdButton"
+                    FillColor="Blue">
+                    <local:VectorImage
+                        Fill="Yellow"
+                        GeometryBrush="{DynamicResource circle_plus}" />
+                </local:RoundButton>
+                <local:RoundButton
+                    x:Name="fourthButton"
+                    FillColor="Blue"
+                    BorderColor="Lime"
+                    BorderWidth="5">
+                    <local:VectorImage
+                        Margin="1"
+                        GeometryBrush="{DynamicResource hollow_cog}" />
+                </local:RoundButton>
+            </StackLayout>
+        </local:Border>
+    </RelativeLayout>
+</ContentPage>

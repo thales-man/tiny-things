@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType></DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Contracts\Tiny.API.Contracts.csproj" />
+    <ProjectReference Include="..\..\HttpService\Contracts\Http.Service.Contracts.csproj" />
+    <ProjectReference Include="..\..\HttpService\Models\Http.Service.Models.csproj" />
+    <ProjectReference Include="..\..\HttpService\Providers\Http.Service.Providers.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2" />
+    <PackageReference Include="Tiny.Framework.Server" Version="2.0.0" />
+  </ItemGroup>
+</Project>

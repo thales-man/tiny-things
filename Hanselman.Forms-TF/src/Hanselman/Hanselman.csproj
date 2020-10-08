@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>Hanselman</RootNamespace>
+    <AssemblyName>Hanselman</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
+    <PackageReference Include="Plugin.MediaManager.Forms" Version="0.9.7" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\Internal\" />
+    <Folder Include="Services\" />
+    <Folder Include="Services\Internal\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework4\Application\Tiny.Framework.Application.csproj" />
+    <ProjectReference Include="..\..\..\Framework4\Presentation\Tiny.Framework.Xamarin.csproj" />
+    <ProjectReference Include="..\..\..\Framework4\Base\Tiny.Framework.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TokenSubstituteStore
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://schemas.thestripedlawn.co/messagerelay">
+    <TokenSubstitutes>
+        <TokenSubstituteItem>
+            <Substitute>192.168.1.101:8081</Substitute>
+            <Token>${relayTo.here}</Token>
+        </TokenSubstituteItem>
+        <!--${dicky.switch}-->
+        <TokenSubstituteItem>
+            <Substitute>51</Substitute>
+            <Token>999BAACE-79C3-42E0-AC48-BFE52F2A723B</Token>
+        </TokenSubstituteItem>
+        <TokenSubstituteItem>
+            <Substitute>+447123456789</Substitute>
+            <Token>dicky</Token>
+        </TokenSubstituteItem>
+        <TokenSubstituteItem>
+            <Substitute>On</Substitute>
+            <Token>${switch.on}</Token>
+        </TokenSubstituteItem>
+        <TokenSubstituteItem>
+            <Substitute>Off</Substitute>
+            <Token>${switch.off}</Token>
+        </TokenSubstituteItem>
+    </TokenSubstitutes>
+</TokenSubstituteStore>

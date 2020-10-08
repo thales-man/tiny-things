@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MessageRelay.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color
+                x:Key="Primary">#2196F3</Color>
+            <Color
+                x:Key="Accent">#96d1ff</Color>
+            <Color
+                x:Key="AccentUp">DarkBlue</Color>
+            <Color
+                x:Key="AccentPressed">Orange</Color>
+            <Color
+                x:Key="LightTextColor">#F9F9F9</Color>
+            <Style
+                x:Key="MainPageStyle"
+                TargetType="ContentPage">
+                <Setter
+                    Property="BackgroundColor"
+                    Value="{StaticResource Primary}" />
+            </Style>
+            <Style
+                x:Key="HeaderLabelStyle"
+                TargetType="Label">
+                <Setter
+                    Property="FontSize"
+                    Value="Large" />
+                <Setter
+                    Property="Margin"
+                    Value="10" />
+                <Setter
+                    Property="TextColor"
+                    Value="{StaticResource LightTextColor}" />
+            </Style>
+            <Style
+                TargetType="ScrollView">
+                <Setter
+                    Property="VerticalOptions"
+                    Value="FillAndExpand" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="FillAndExpand" />
+                <Setter
+                    Property="Margin"
+                    Value="10,0,10,0" />
+            </Style>
+            <Style
+                TargetType="Editor">
+                <Setter
+                    Property="FontSize"
+                    Value="Small" />
+                <Setter
+                    Property="AutoSize"
+                    Value="TextChanges" />
+                <Setter
+                    Property="IsReadOnly"
+                    Value="True" />
+            </Style>
+            <Style
+                x:Key="OperationsLabelStyle"
+                TargetType="Label">
+                <Setter
+                    Property="FontSize"
+                    Value="Caption" />
+                <Setter
+                    Property="VerticalOptions"
+                    Value="Center" />
+                <Setter
+                    Property="TextColor"
+                    Value="{StaticResource LightTextColor}" />
+            </Style>
+            <Style
+                x:Key="ButtonbarStyle"
+                TargetType="StackLayout">
+                <Setter
+                    Property="Orientation"
+                    Value="Horizontal" />
+                <Setter
+                    Property="HorizontalOptions"
+                    Value="End" />
+                <Setter
+                    Property="Margin"
+                    Value="0,0,10,10" />
+            </Style>
+            <Style
+                TargetType="Button">
+                <Setter
+                    Property="Padding"
+                    Value="5" />
+                <Setter
+                    Property="CornerRadius"
+                    Value="8" />
+                <Setter
+                    Property="BackgroundColor"
+                    Value="{StaticResource Accent}" />
+                <Setter
+                    Property="BorderColor"
+                    Value="{StaticResource AccentUp}" />
+                <Setter
+                    Property="BorderWidth"
+                    Value="2" />
+                <Setter
+                    Property="TextColor"
+                    Value="{DynamicResource LightTextColor}" />
+                <Style.Triggers>
+                    <Trigger
+                        Property="Button.IsPressed"
+                        Value="true"
+                        TargetType="Button">
+                        <Setter
+                            Property="BorderColor"
+                            Value="{StaticResource AccentPressed}" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

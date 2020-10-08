@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:y="clr-namespace:Tiny.Framework.Controls;assembly=Tiny.Framework.Xamarin"
+    x:Class="Hanselman.Views.MenuPage"
+    Title="{Binding Path=Title}"
+    Icon="{Binding Path=Icon}">
+    <ContentPage.Content>
+        <StackLayout
+            VerticalOptions="FillAndExpand">
+            <ListView
+                CachingStrategy="RecycleElement"
+                SeparatorColor="Transparent"
+                HasUnevenRows="True"
+                x:Name="ListViewMenu"
+                ItemsSource="{Binding Path=MenuItems}"
+                SelectedItem="{Binding Path=SelectedPage, Mode=TwoWay}">
+                <ListView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition
+                                Width="10" />
+                            <ColumnDefinition
+                                Width="*" />
+                            <ColumnDefinition
+                                Width="10" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                                Height="30" />
+                            <RowDefinition
+                                Height="80" />
+                            <RowDefinition
+                                Height="Auto" />
+                            <RowDefinition
+                                Height="5" />
+                        </Grid.RowDefinitions>
+                        <BoxView
+                            Grid.ColumnSpan="3"
+                            Grid.RowSpan="4"
+                            BackgroundColor="#03A9F4" />
+                        <y:RoundButton
+                            Grid.Column="1"
+                            Grid.Row="1"
+                            HorizontalOptions="Start"
+                            BorderColor="Yellow"
+                            BorderWidth="5"
+                            DiameterRequest="80">
+                            <Image
+                                VerticalOptions="FillAndExpand"
+                                HorizontalOptions="FillAndExpand"
+                                Source="scott159.png" />
+                        </y:RoundButton>
+                        <Label
+                            Grid.Column="1"
+                            Grid.Row="2"
+                            Text="Hanselman.Forms"
+                            Style="{DynamicResource SubtitleStyle}" />
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid
+                                Padding="20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition
+                                        Width="Auto" />
+                                    <ColumnDefinition
+                                        Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image
+                                    Source="{Binding Path=Icon}"
+                                    HeightRequest="25"
+                                    WidthRequest="25" />
+                                <Label
+                                    Grid.Column="1"
+                                    Text="{Binding Path=Title}"
+                                    FontSize="24" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

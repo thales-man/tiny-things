@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+    <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Tiny.Framework.Data</PackageId>
+        <PackageVersion>2.1.0</PackageVersion>
+        <AssemblyVersion>2.1.0</AssemblyVersion>
+        <FileVersion>2.1.0</FileVersion>
+        <Authors>the striped lawn company</Authors>
+        <Description>tiny framework base data package.</Description>
+        <Copyright>Copyright 2020 © the striped lawn company limited</Copyright>
+        <Title>Tiny.Framework.Data</Title>
+        <PackageReleaseNotes>.Net Standard 2.1 compliant</PackageReleaseNotes>
+        <Summary>tiny framework base data package</Summary>
+        <PackageProjectUrl>https://github.com/thales-man/tiny-things</PackageProjectUrl>
+        <Owners>the striped lawn company</Owners>
+        <PackOnBuild>true</PackOnBuild>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="8.13.1.21947">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.8" />
+        <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Configuration\" />
+        <Folder Include="Factories\" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Update="readme.txt">
+            <Pack>true</Pack>
+            <PackagePath>.</PackagePath>
+            <IncludeInPackage>true</IncludeInPackage>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Base\Tiny.Framework.csproj" />
+    </ItemGroup>
+</Project>

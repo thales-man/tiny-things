@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Hanselman.macOS</RootNamespace>
+    <AssemblyName>Hanselman.macOS</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <ProjectGuid>{A478B0C4-32DF-476E-912A-00458C4DF9F8}</ProjectGuid>
+        <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>false</IncludeMonoRuntime>
+    <UseSGen>true</UseSGen>
+    <UseRefCounting>true</UseRefCounting>
+    <Profiling>true</Profiling>
+    <AOTMode>None</AOTMode>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <NoStdLib>true</NoStdLib>
+    <LinkMode>SdkOnly</LinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>true</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
+    <IncludeMonoRuntime>true</IncludeMonoRuntime>
+    <UseSGen>true</UseSGen>
+    <UseRefCounting>true</UseRefCounting>
+    <LinkMode>SdkOnly</LinkMode>
+    <AOTMode>None</AOTMode>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="Xamarin.Mac" />
+        <Reference Include="System.Json" />
+    </ItemGroup>
+    <ItemGroup>
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-128.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-128%402x.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-16.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-16%402x.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-256.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-256%402x.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-32.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-32%402x.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-512.png" />
+        <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\AppIcon-512%402x.png" />
+        <ImageAsset Include="Assets.xcassets\Contents.json" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Resources\" />
+        <Folder Include="Services\" />
+        <Folder Include="Services\Internal\" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Include="Info.plist" />
+        <None Include="Entitlements.plist" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Main.cs" />
+        <Compile Include="AppDelegate.cs" />
+        <Compile Include="Services\Internal\TweetStore.cs" />
+        <Compile Include="Services\Internal\GetJsonTokenValues.cs" />
+    </ItemGroup>
+    <ItemGroup>
+        <BundleResource Include="Resources\about.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\about%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\blog.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\blog%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\channel9.png" />
+        <BundleResource Include="Resources\Default%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\Default-568h%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\facebook.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\facebook%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\googleplus.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\googleplus%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\hm.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\hm%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\hm_full.jpg">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\ic_pause.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\ic_pause%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\ic_play.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\ic_play%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\ic_share.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\ic_share%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\ic_stop.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\ic_stop%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\Icon.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\Icon%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\Icon-60%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\Icon-Small.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\Icon-Small%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\Icon-Small-40%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\instagram.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\instagram%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\ratchet.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\ratchet%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\ratchet_full.jpg">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\refresh.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\refresh%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\scott.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\scott159.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\slideout.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\slideout%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\tdl.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\tdl%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\tdl_full.jpg">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\twitter.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\twitter%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\twitternav.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\twitternav%402x.png">
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </BundleResource>
+        <BundleResource Include="Resources\participating_assemblies.xml">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </BundleResource>
+    </ItemGroup>
+    <ItemGroup>
+        <InterfaceDefinition Include="Main.storyboard" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />
+        <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
+        <PackageReference Include="Plugin.MediaManager.Forms" Version="0.9.7" />
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+        <PackageReference Include="NGraphics" Version="0.5.0" />
+        <PackageReference Include="Plugin.MediaManager" Version="0.9.7" />
+        <PackageReference Include="System.Composition" Version="1.4.0" />
+        <PackageReference Include="System.Composition.AttributedModel" Version="1.4.0" />
+        <PackageReference Include="System.Composition.Convention" Version="1.4.0" />
+        <PackageReference Include="System.Composition.Hosting" Version="1.4.0" />
+        <PackageReference Include="System.Composition.Runtime" Version="1.4.0" />
+        <PackageReference Include="System.Composition.TypedParts" Version="1.4.0" />
+        <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
+        <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
+        <PackageReference Include="Tiny.Framework.Application">
+          <Version>2.0.0</Version>
+        </PackageReference>
+        <PackageReference Include="Tiny.Framework.Xamarin">
+          <Version>2.0.0</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Hanselman\Hanselman %28packs%29.csproj">
+        <Project>{028799A4-E2FD-4901-B950-666C00EFBF63}</Project>
+        <Name>Hanselman (packs)</Name>
+      </ProjectReference>
+    </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
+</Project>

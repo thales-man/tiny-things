@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>UI classes and types for the Tiny Framework</Description>
+        <Product>Tiny Framework UI</Product>
+        <Company>the striped lawn company limited</Company>
+        <Authors>the striped lawn company limited</Authors>
+        <Version>2.0.0.0</Version>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <FileVersion>2.0.0.0</FileVersion>
+        <PackageReleaseNotes>moved to net standard 2, changed / enhanced data providers and ORM services. added asp net core collaborating service adapter support.</PackageReleaseNotes>
+        <RootNamespace>Tiny.Framework</RootNamespace>
+    </PropertyGroup>
+    <ItemGroup>
+      <Compile Remove="Properties\**" />
+      <EmbeddedResource Remove="Properties\**" />
+      <None Remove="Properties\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Plugin.MediaManager" Version="0.9.7" />
+      <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
+      <PackageReference Include="NGraphics" Version="0.5.0" />
+      <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />
+      <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+      <PackageReference Include="SonarAnalyzer.CSharp" Version="8.6.0.16497">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+      <PackageReference Include="Tiny.Framework.Application" Version="2.0.0" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Factories\" />
+      <Folder Include="Views\" />
+      <Folder Include="Scaffolding\" />
+      <Folder Include="Models\" />
+      <Folder Include="Services\" />
+      <Folder Include="Controls\" />
+      <Folder Include="Resources\" />
+      <Folder Include="Services\Internal\" />
+      <Folder Include="Factories\Internal\" />
+      <Folder Include="Models\Internal\" />
+      <Folder Include="Views\Internal\" />
+      <Folder Include="Helpers\" />
+      <Folder Include="Services\macOS\" />
+    </ItemGroup>
+</Project>

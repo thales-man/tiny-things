@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Application
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:y="clr-namespace:Tiny.Framework.Resources;assembly=Tiny.Framework.Xamarin"
+    x:Class="Hanselman.App">
+    <Application.Resources>
+        <!--
+    xmlns:light = "clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Light"
+    xmlns:dark = "clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Dark"
+        <ResourceDictionary MergedWith = "light:LightThemeResources" />
+        <ResourceDictionary MergedWith = "dark:DarkThemeResources" />
+        -->
+        <ResourceDictionary MergedWith="y:Icons" />
+        <!-- implicit style -->
+        <Style
+            TargetType="NavigationPage"
+            ApplyToDerivedTypes="true">
+            <Setter
+                Property="BarBackgroundColor"
+                Value="#03A9F4" />
+            <Setter
+                Property="BarTextColor"
+                Value="#FFFFFF" />
+        </Style>
+        <Style
+            TargetType="Page"
+            ApplyToDerivedTypes="true">
+            <Setter
+                Property="BackgroundColor"
+                Value="LightGray" />
+        </Style>
+        <Style
+            TargetType="ListView"
+            ApplyToDerivedTypes="true">
+            <Setter
+                Property="BackgroundColor"
+                Value="LightGray" />
+        </Style>
+    </Application.Resources>
+</Application>

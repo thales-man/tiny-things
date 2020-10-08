@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MessageRelay.Views.MainPage"
+    Title="{Binding Path=Title}"
+    Style="{DynamicResource MainPageStyle}">
+    <Grid
+        VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="Auto" />
+            <RowDefinition
+                Height="*" />
+            <RowDefinition
+                Height="Auto" />
+        </Grid.RowDefinitions>
+        <Label
+            Style="{StaticResource HeaderLabelStyle}"
+            Text="{Binding Path=Title}" />
+        <ScrollView
+            Grid.Row="1">
+            <Editor
+                Text="{Binding Path=ConsoleText, Mode=OneWay}" />
+        </ScrollView>
+        <StackLayout
+            Grid.Row="2"
+            Style="{StaticResource ButtonbarStyle}">
+            <Label
+                Style="{StaticResource OperationsLabelStyle}"
+                Text="Console Operations:" />
+            <Button
+                Text="Copy"
+                Command="{Binding Path=CopyConsoleCommand}" />
+            <Button
+                Text="Clear"
+                Command="{Binding Path=ClearConsoleCommand}" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

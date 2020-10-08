@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <ReleaseVersion>2.1.0</ReleaseVersion>
+        <SynchReleaseVersion>false</SynchReleaseVersion>
+    </PropertyGroup>
+    <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Tiny.Framework</PackageId>
+        <PackageVersion>2.1.0</PackageVersion>
+        <AssemblyVersion>2.1.0</AssemblyVersion>
+        <FileVersion>2.1.0</FileVersion>
+        <Authors>the striped lawn company</Authors>
+        <Description>tiny framework  base package.</Description>
+        <Copyright>Copyright 2020 © the striped lawn company limited</Copyright>
+        <Title>Tiny.Framework</Title>
+        <PackageReleaseNotes>.Net Standard 2.1 compliant</PackageReleaseNotes>
+        <Summary>tiny framework base package</Summary>
+        <PackageProjectUrl>https://github.com/thales-man/tiny-things</PackageProjectUrl>
+        <Owners>the striped lawn company</Owners>
+        <PackOnBuild>true</PackOnBuild>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <LangVersion>latest</LangVersion>
+        <NoWarn>1701;1702</NoWarn>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+        <PackageReference Include="System.Composition" Version="1.4.1" />
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="8.13.1.21947">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="3.1.8" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.8" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.8" />
+        <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.8" />
+        <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
+        <PackageReference Include="Microsoft.OpenApi" Version="1.2.3" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Container\Internal\" />
+        <Folder Include="Diagnostic\" />
+        <Folder Include="Diagnostic\Internal\" />
+        <Folder Include="Providers\" />
+        <Folder Include="Providers\Internal\" />
+        <Folder Include="Registration\" />
+        <Folder Include="Registration\Attributes\" />
+        <Folder Include="Faults\" />
+    </ItemGroup>
+</Project>

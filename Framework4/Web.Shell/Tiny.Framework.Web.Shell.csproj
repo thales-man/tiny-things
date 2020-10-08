@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+    <PropertyGroup>
+        <IsPackable>true</IsPackable>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Tiny.Framework.Web.Shell</PackageId>
+        <PackageVersion>2.1.0</PackageVersion>
+        <AssemblyVersion>2.1.0</AssemblyVersion>
+        <FileVersion>2.1.0</FileVersion>
+        <Authors>the striped lawn company</Authors>
+        <Description>tiny framework  web shell package</Description>
+        <Copyright>Copyright 2020 © the striped lawn company limited</Copyright>
+        <Title>Tiny.Framework.Web.Shell</Title>
+        <PackageReleaseNotes>.Net Standard 2.1 compliant</PackageReleaseNotes>
+        <Summary>tiny framework web shell package</Summary>
+        <PackageProjectUrl>https://github.com/thales-man/tiny-things</PackageProjectUrl>
+        <PackOnBuild>true</PackOnBuild>
+        <Owners>the striped lawn company</Owners>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="8.13.1.21947">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.8" />
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.8" />
+        <PackageReference Include="Microsoft.Extensions.Hosting.Systemd" Version="3.1.8" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Registration\" />
+        <Folder Include="Configuration\" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Update="readme.txt">
+            <Pack>true</Pack>
+            <PackagePath>.</PackagePath>
+            <IncludeInPackage>true</IncludeInPackage>
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\Base\Tiny.Framework.csproj" />
+    </ItemGroup>
+</Project>

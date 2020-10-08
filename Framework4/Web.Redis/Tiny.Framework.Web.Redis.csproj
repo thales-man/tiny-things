@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    </PropertyGroup>
+    <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Tiny.Framework.Web.Redis</PackageId>
+        <PackageVersion>2.1.0</PackageVersion>
+        <Authors>the striped lawn company</Authors>
+        <Description>tiny framework web asp net core distributed cache services and facilities.</Description>
+        <Copyright>Copyright 2020 © the striped lawn company limited</Copyright>
+        <Title>Tiny.Framework.Web.Redis</Title>
+        <PackageReleaseNotes>.Net Standard 2.1 compliant</PackageReleaseNotes>
+        <Summary>tiny framework web asp net core distributed cache services and facilities</Summary>
+        <PackageProjectUrl>https://github.com/thales-man/tiny-things</PackageProjectUrl>
+        <Owners>the striped lawn company</Owners>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="3.1.8" />
+        <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="3.1.8" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.8" />
+        <PackageReference Include="Microsoft.Extensions.Http" Version="3.1.8" />
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="8.13.1.21947">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.2.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Registration\" />
+        <Folder Include="Configuration\" />
+        <Folder Include="Services\" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\Projects\Framework4\Base\Tiny.Framework.csproj" />
+        <ProjectReference Include="..\Web\Tiny.Framework.Web.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <None Update="readme.txt">
+            <Pack>true</Pack>
+            <PackagePath>.</PackagePath>
+            <IncludeInPackage>true</IncludeInPackage>
+        </None>
+    </ItemGroup>
+</Project>

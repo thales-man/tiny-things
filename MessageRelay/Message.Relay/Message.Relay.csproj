@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceAssemblyReference>true</ProduceAssemblyReference>
+    <AssemblyName>Message.Relay</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.2" />
+    <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="ViewModels\Internal\" />
+    <Folder Include="Providers\" />
+    <Folder Include="Models\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Providers\Internal\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework4\Base\Tiny.Framework.csproj" />
+    <ProjectReference Include="..\..\RestAPI\TinyAPI\Contracts\Tiny.API.Contracts.Referenced.csproj" />
+    <ProjectReference Include="..\..\RestAPI\HttpService\Contracts\Http.Service.Contracts.Referenced.csproj" />
+    <ProjectReference Include="..\..\Framework4\Server\Tiny.Framework.Server.csproj" />
+    <ProjectReference Include="..\..\Framework4\Presentation\Tiny.Framework.Xamarin.csproj" />
+    <ProjectReference Include="..\..\Framework4\Application\Tiny.Framework.Application.csproj" />
+  </ItemGroup>
+</Project>

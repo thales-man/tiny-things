@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Description>UI classes and types for the Tiny Framework</Description>
+        <Product>Tiny Framework Base UI</Product>
+        <Company>the striped lawn company limited</Company>
+        <Authors>the striped lawn company limited</Authors>
+        <Version>2.0.0.0</Version>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
+        <FileVersion>2.0.0.0</FileVersion>
+        <PackageReleaseNotes>a basic boot strapping application support framework.</PackageReleaseNotes>
+        <RootNamespace>Tiny.Framework</RootNamespace>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="System.Composition" Version="1.4.0" />
+      <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+      <PackageReference Include="SonarAnalyzer.CSharp" Version="8.6.0.16497">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Factories\" />
+      <Folder Include="Factories\Internal\" />
+      <Folder Include="Models\" />
+      <Folder Include="Models\Internal\" />
+      <Folder Include="Views\" />
+      <Folder Include="Container\" />
+      <Folder Include="Scaffolding\" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Base\Tiny.Framework.csproj" />
+    </ItemGroup>
+</Project>

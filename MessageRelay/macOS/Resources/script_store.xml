@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppleScriptStore
+    xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://schemas.thestripedlawn.co/messagerelay">
+    <AppleScripts>
+        <AppleScriptItem>
+            <Command>start_media_serving</Command>
+            <Script>
+            tell application "iTunes"
+                pause
+            end tell
+            set theResponse to "iTunes has been loaded"
+            </Script>
+        </AppleScriptItem>
+        <AppleScriptItem>
+            <Command>stop_media_serving</Command>
+            <Script>
+            tell application "iTunes"
+                quit
+            end tell
+            set theResponse to "iTunes has been unloaded"
+            </Script>
+        </AppleScriptItem>
+        <AppleScriptItem>
+            <Command>enter</Command>
+            <Script>
+            do shell script "curl 'http://${relayTo.here}/json.htm?type=command&amp;param=switchlight&amp;idx=${device.switch}&amp;switchcmd=${switch.off}'"
+            </Script>
+        </AppleScriptItem>
+        <AppleScriptItem>
+            <Command>exit</Command>
+            <Script>
+            do shell script "curl 'http://${relayTo.here}/json.htm?type=command&amp;param=switchlight&amp;idx=${device.switch}&amp;switchcmd=${switch.on}'"
+            </Script>
+        </AppleScriptItem>
+        <AppleScriptItem>
+            <Command>text_message</Command>
+            <Script>
+            global msgText
+            global targetPhoneNum
+            set msgText to "${text.message}"
+            set targetPhoneNum to "${target.phone}"
+            tell application "Messages"
+                set serviceID to id of 1st service whose service type = iMessage
+                send msgText to buddy targetPhoneNum of service id serviceID
+            end tell
+            set theResponse to "${target.person} has been sent '${text.message}'"
+            </Script>
+        </AppleScriptItem>
+    </AppleScripts>
+</AppleScriptStore>

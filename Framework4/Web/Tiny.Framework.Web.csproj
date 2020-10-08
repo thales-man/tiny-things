@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    </PropertyGroup>
+    <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Tiny.Framework.Web</PackageId>
+        <PackageVersion>2.1.0</PackageVersion>
+        <AssemblyVersion>2.1.0</AssemblyVersion>
+        <FileVersion>2.1.0</FileVersion>
+        <Authors>the striped lawn company</Authors>
+        <Description>tiny framework web asp net core services and facilities.</Description>
+        <Copyright>Copyright 2020 © the striped lawn company limited</Copyright>
+        <Title>Tiny.Framework.Web</Title>
+        <PackageReleaseNotes>.Net Standard 2.1 compliant</PackageReleaseNotes>
+        <Summary>tiny framework web asp net core services and facilities</Summary>
+        <PackageProjectUrl>https://github.com/thales-man/tiny-things</PackageProjectUrl>
+        <Owners>the striped lawn company</Owners>
+    </PropertyGroup>
+    <ItemGroup>
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="8.13.1.21947">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Factories\" />
+        <Folder Include="Faults\" />
+        <Folder Include="Helpers\" />
+        <Folder Include="Providers\" />
+        <Folder Include="Adapters\" />
+        <Folder Include="Registration\" />
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\Projects\Framework4\Base\Tiny.Framework.csproj" />
+    </ItemGroup>
+</Project>
