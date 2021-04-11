@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Composition;
 using MessageRelay.Models;
-using Tiny.Framework;
 using Tiny.Framework.Flow;
 using Tiny.Framework.Providers;
 
@@ -9,10 +8,12 @@ namespace MessageRelay.Providers.Internal
 {
     [Shared]
     [Export(typeof(ICoordinateRequestSubmissions))]
-    public class RequestSubmissionCoordinator : 
+    public class RequestSubmissionCoordinator :
         MappedContentProvider<Guid, IRelayRequest>,
         ICoordinateRequestSubmissions
     {
+        const int ShortLapse = 50000000; // 5 seconds in ticks
+
         /// <summary>
         /// Gets or sets the synchronise (reset event).
         /// </summary>
@@ -43,15 +44,10 @@ namespace MessageRelay.Providers.Internal
             if (Holds(thisRequest.Device))
             {
                 var previous = Fetch(thisRequest.Device);
-                if (thisRequest.Timestamp > previous.Timestamp)
-                {
-                    Update(thisRequest.Device, thisRequest);
-                    Synchronise.Finish();
-                    return true;
-                }
-
+                Update(thisRequest.Device, thisRequest);
                 Synchronise.Finish();
-                return false;
+
+                return thisRequest.Trigger != previous.Trigger;
             }
 
             Add(thisRequest.Device, thisRequest);

@@ -1,5 +1,4 @@
-﻿using System;
-using MessageRelay.Models;
+﻿using MessageRelay.Models;
 
 namespace MessageRelay.Providers
 {

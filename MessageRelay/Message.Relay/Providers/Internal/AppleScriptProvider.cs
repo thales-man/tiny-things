@@ -1,7 +1,6 @@
 ﻿using System.Composition;
 using System.Linq;
 using MessageRelay.Models;
-using Tiny.Framework;
 using Tiny.Framework.IO;
 
 namespace MessageRelay.Providers.Internal
@@ -37,7 +36,7 @@ namespace MessageRelay.Providers.Internal
         [OnImportsSatisfied]
         public void Compose()
         {
-            var file = Assets.GetTextAsset(StoreName.ForAppleScripts);
+            var file = Assets.GetText(StoreName.ForAppleScripts);
             ScriptStore = Hydrate.FromString<AppleScriptStore>(file);
         }
 

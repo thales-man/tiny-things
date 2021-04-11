@@ -1,7 +1,6 @@
 ﻿using System.Composition;
 using System.Linq;
 using MessageRelay.Models;
-using Tiny.Framework;
 using Tiny.Framework.IO;
 using Tiny.Framework.Utility;
 
@@ -38,7 +37,7 @@ namespace MessageRelay.Providers.Internal
         [OnImportsSatisfied]
         public void Compose()
         {
-            var file = Assets.GetTextAsset(StoreName.ForTokenSubstitutions);
+            var file = Assets.GetText(StoreName.ForTokenSubstitutions);
             TokenStore = Hydrate.FromString<TokenSubstituteStore>(file);
         }
 

@@ -77,7 +77,7 @@ namespace MessageRelay.ViewModels
         /// Adds the log entry.
         /// </summary>
         /// <param name="newEntry">New entry.</param>
-        public void AddLogEntry(IDiagnosticDetail newEntry)
+        public void AddLogEntry(IDiagnosticPayload newEntry)
         {
             // if the console text is roughly bigger than 50k
             if (ConsoleText.Length > 50000)

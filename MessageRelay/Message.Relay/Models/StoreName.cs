@@ -3,7 +3,6 @@
 // the striped lawn company licenses this file to you under the GPLv3 license.
 // see the LICENSE file in the project root for more information.
 //-----------------------------------------------------------------------------
-
 namespace MessageRelay.Models
 {
     /// <summary>

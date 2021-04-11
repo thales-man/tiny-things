@@ -1,0 +1,9 @@
+[
+    "Tiny.Framework",
+    "Tiny.Framework.macOS",
+    "Http.Service.Models",
+    "Http.Service.Providers",
+    "Tiny.API",
+    "Tiny.Framework.Xamarin",
+    "Message.Relay"
+]

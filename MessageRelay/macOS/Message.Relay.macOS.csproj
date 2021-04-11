@@ -8,7 +8,7 @@
         <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
         <OutputType>Exe</OutputType>
         <RootNamespace>MessageRelay.macOS</RootNamespace>
-        <AssemblyName>Message.Relay.Shell</AssemblyName>
+        <AssemblyName>Message Relay</AssemblyName>
         <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
         <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
         <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
@@ -87,7 +87,7 @@
         <Compile Include="AppDelegate.cs" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Xamarin.Forms" Version="4.5.0.617" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\RestAPI\TinyAPI\Server\Tiny.API.Referenced.csproj">
@@ -136,8 +136,8 @@
         </ProjectReference>
     </ItemGroup>
     <ItemGroup>
-        <BundleResource Include="Resources\participating_assemblies.xml" />
-        <BundleResource Include="Resources\service_configuration.xml" />
+        <BundleResource Include="Resources\participating_assemblies.json" />
+        <BundleResource Include="Resources\service_configuration.json" />
         <BundleResource Include="Resources\script_store.xml" />
         <BundleResource Include="Resources\token_store.xml" />
     </ItemGroup>

@@ -1,0 +1,5 @@
+﻿{
+    "ListeningAddress": "192.168.1.100",
+    "ListeningPort": 1026,
+    "ServicePrefix": "api"
+}

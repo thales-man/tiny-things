@@ -43,7 +43,7 @@ namespace MessageRelay.macOS
         /// <param name="notification">Notification.</param>         public override void DidFinishLaunching(NSNotification notification)         {
             SmartLinking.IncludeLibraries(
                 typeof(VideoView),
-                typeof(GeometryBrush),                 typeof(CustomControlViewRenderer));              Forms.Init();             LoadApplication(new App());             base.DidFinishLaunching(notification);
+                typeof(GeometryBrush));              Forms.Init();             LoadApplication(new App());             base.DidFinishLaunching(notification);
         } 
         /// <summary>
         /// Will terminate.

@@ -82,6 +82,11 @@ namespace MessageRelay.Controllers
         [ResourceFormatAndVerb("/relay", WebMethod.GET)]
         public async Task<IServerResponse> DoIncomingRelay(IRelayRequest request)
         {
+            if (It.IsEmpty(request.Device))
+            {
+                return await RespondWith.Result(HttpStatusCode.OK, "You're a teapot...");
+            }
+
             var theSwitch = Substitutes.GetSubstituteFor($"{request.Device}");
             if (It.IsEmpty(theSwitch))
             {
@@ -105,7 +110,7 @@ namespace MessageRelay.Controllers
                 }
                 else
                 {
-                    Mediator.Publish(Message.Create($"duplicate request: '{request.Device}', '{request.Trigger}', '{request.Timestamp}'"));
+                    Mediator.Publish(Message.Create($"duplicate request: '{request.Device}', '{request.Trigger}'"));
                 }
             }
 

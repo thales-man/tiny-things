@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ServiceConfiguration
-    xmlns:i="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns="http://schemas.thestripedlawn.co/tiny.bootstrap">
-        <ListeningAddress>192.168.1.100</ListeningAddress>
-    <ListeningPort>1026</ListeningPort>
-    <ServicePrefix>api</ServicePrefix>
-</ServiceConfiguration>
